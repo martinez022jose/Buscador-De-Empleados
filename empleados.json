@@ -1,0 +1,73 @@
+[
+    {
+        "Nombre" : "Jose",
+        "Apellido" : "Martinez",
+        "Puesto" : "Desarrollador Backend",
+        "Sueldo" : "20000",
+        "Skills" : ["java","javaScript","git"]
+        
+    },
+
+    {
+        "Nombre" : "Tomas",
+        "Apellido" : "Gutierrzez",
+        "Puesto" : "Desarrollador Frontend",
+        "Sueldo" : "25000",
+        "skills" : ["java","javaScript","git","php","html"]
+       
+    },
+
+    {
+        "nombre" : "Lucas",
+        "apellido" : "Pinto",
+        "puesto" : "Desarrollador Backend",
+        "sueldo" : "30000",
+        "Skills" : ["java","javaScript","git"]
+      
+    },
+
+    {
+        "Nombre" : "Leonel",
+        "Apellido" : "Gonzales",
+        "Puesto" : "Desarrollador Backend",
+        "Sueldo" : "30000",
+        "Skills" : ["java","javaScript","git"]
+      
+    },
+
+    {
+        "Nombre" : "Matias",
+        "Apellido" : "Barreto",
+        "Puesto" : "Desarrollador Backend",
+        "Sueldo" : "30000",
+        "Skills" : ["java","javaScript","git"]
+      
+    },
+
+    {
+        "Nombre" : "Raul",
+        "Apellido" : "Sequeira",
+        "Puesto" : "Desarrollador Backend",
+        "Sueldo" : "30000",
+        "Skills" : ["java","javaScript","git","c++","c"]
+      
+    }
+
+    {
+        "Nombre" : "Sebastian",
+        "Apellido" : "Diaz",
+        "Puesto" : "Desarrollador Backend",
+        "Sueldo" : "30000",
+        "Skills" : ["java","javaScript","git","#c"]
+      
+    }
+
+    {
+        "Nombre" : "Ezequiel",
+        "Apellido" : "Sosa",
+        "Puesto" : "Desarrollador Backend",
+        "Sueldo" : "30000",
+        "Skills" : ["java","javaScript","git","#c"]
+      
+    }
+]
