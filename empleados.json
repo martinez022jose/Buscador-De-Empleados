@@ -13,15 +13,15 @@
         "Apellido" : "Gutierrzez",
         "Puesto" : "Desarrollador Frontend",
         "Sueldo" : "25000",
-        "skills" : ["java","javaScript","git","php","html"]
+        "Skills" : ["java","javaScript","git","php","html"]
        
     },
 
     {
-        "nombre" : "Lucas",
-        "apellido" : "Pinto",
-        "puesto" : "Desarrollador Backend",
-        "sueldo" : "30000",
+        "Nombre" : "Lucas",
+        "Apellido" : "Pinto",
+        "Puesto" : "Desarrollador Backend",
+        "Sueldo" : "30000",
         "Skills" : ["java","javaScript","git"]
       
     },
@@ -51,7 +51,7 @@
         "Sueldo" : "30000",
         "Skills" : ["java","javaScript","git","c++","c"]
       
-    }
+    },
 
     {
         "Nombre" : "Sebastian",
@@ -60,7 +60,7 @@
         "Sueldo" : "30000",
         "Skills" : ["java","javaScript","git","#c"]
       
-    }
+    },
 
     {
         "Nombre" : "Ezequiel",
