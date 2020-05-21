@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Paytone+One&display=swap');
+
+body{
+	font-family: 'Paytone One', sans-serif;
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+
+section{
+    width: 100%;
+    margin:auto;
+}
+section .boxTitle {
+    width: 100%;
+    background: #ededed;
+}
+
+section .boxTitle h1{
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+}
+section .boxSearch{
+    width: 70%;
+    background: rgba(0,0,0,0.9);
+    margin: auto;
+    margin-top: 10px;
+   
+}
+section .boxSearch .search{
+    padding: 30px;
+    width: 100%;
+}
+
+section .boxSearch .search input{
+    width: 300px;
+    height: 40px;
+    margin-right: 15px;
+    border: 1px solid black;
+    font-size: 20px;
+    text-align: center;
+}
+
+section .boxSearch .search button{
+    width: 150px;
+    height: 40px;
+    background:white;
+    color:black;
+    border-radius: 15px;
+    font-size: 20px;
+    border: 1px solid #333;
+}
+
+
+section .boxSearch .search button:hover{
+    background: #ededed;
+    color: black;
+  
+}
+section .recordList{
+    width: 70%;
+    margin: auto;
+    
+}
+section .recordList table thead{
+    width: 100%;
+    background: #ededed;
+    color:black;
+} 
+
+section .recordList table{
+    width: 100%;
+}
+section .recordList table thead tr{
+    width: 100%;
+   
+    
+}
+section .recordList table thead tr th{
+    width: 20%;
+    font-size: 15px;
+    padding: 15px;
+    
+}

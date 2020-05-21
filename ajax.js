@@ -4,7 +4,9 @@ var busqueda = document.querySelector('.itemToSearch');
 var registro = document.querySelector('#record');
 var empleados = new Array();
 getEmpleados(empleados);
-//listarEmpleados(empleados);
+console.log(empleados);
+console.log(empleados[1]);
+
 
 buttonBusqueda .addEventListener('click', buscarElemento);
 busqueda.addEventListener('keyup',buscarElemento);
@@ -22,7 +24,7 @@ function validarEspacioEnBlanco(){
 
 };
 
-function existenciaRegistro(){
+function validarExistenciaRegistro(){
     if(registro.innerHTML == ''){
         return true;
 
@@ -50,23 +52,21 @@ function realizarBusqueda(valorABuscar){
 function buscarElemento(){
     resetInput(registro);
     if(validarEspacioEnBlanco()){
-        busqueda.placeholder = "Debe ingresar nombre";
+        busqueda.placeholder = "Debe ingresar un nombre";
     }else{
         const valorABuscar = busqueda.value.toLowerCase();
         realizarBusqueda(valorABuscar);
         
-        if(existenciaRegistro()){
+        if(validarExistenciaRegistro()){
             mensajeError="No hay registro";
             registro.innerHTML+=`
             <tr>
             <td>${mensajeError}</td>
             </tr>`;
         }
-
-       
-
     }
 };
+
 
 function getEmpleados(empleados){
     var xhr = new XMLHttpRequest();
@@ -82,19 +82,22 @@ function getEmpleados(empleados){
      xhr.send(null);
 };
 
+
+
 (function listarEmpleados(){
-        for(var i = 0;i<empleados.length;i++){
-            registro.innerHTML+=
-            `<tr>
-            <td>${empleados[i].Nombre}</td>
-            <td>${empleados[i].Apellido}</td>
-            <td>${empleados[i].Puesto}</td>
-            <td>${empleados[i].Sueldo}</td>
-            <td>${empleados[i].Skills}</td>
-            </tr>`;
-        }
+    for(var i=0;i<empleados.length;i++){
+        registro.innerHTML+=
+        `<tr>
+        <td>${empleados[i]}</td>
+        <td>${empleados[i]}</td>
+        <td>${empleados[i]}</td>
+        <td>${empleados[i]}</td>
+        <td>${empleados[i]}</td>
+        </tr>`;
+    }
 
 })();
+
 
 
 
