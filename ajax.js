@@ -1,20 +1,19 @@
 
+//Variables
 var buttonBusqueda = document.querySelector('#buttonSearch');
 var busqueda = document.querySelector('.itemToSearch');
 var registro = document.querySelector('#record');
 var empleados = new Array();
 getEmpleados(empleados);
-console.log(empleados);
-console.log(empleados[1]);
 
-
+//Eventos
 buttonBusqueda .addEventListener('click', buscarElemento);
 busqueda.addEventListener('keyup',buscarElemento);
 
-
+//Funciones
 function resetInput(input){
     input.innerHTML = '';
-};
+}
 
 function validarEspacioEnBlanco(){
     if(busqueda.value == ''){
@@ -22,16 +21,15 @@ function validarEspacioEnBlanco(){
     }
     return false;
 
-};
+}
 
 function validarExistenciaRegistro(){
     if(registro.innerHTML == ''){
         return true;
-
     } 
     return false; 
 
-};
+}
 
 function realizarBusqueda(valorABuscar){
     for(let i=0; i<empleados.length;i++){
@@ -47,7 +45,7 @@ function realizarBusqueda(valorABuscar){
             </tr>`;
         }}
 
-};
+}
 
 function buscarElemento(){
     resetInput(registro);
@@ -56,16 +54,9 @@ function buscarElemento(){
     }else{
         const valorABuscar = busqueda.value.toLowerCase();
         realizarBusqueda(valorABuscar);
-        
-        if(validarExistenciaRegistro()){
-            mensajeError="No hay registro";
-            registro.innerHTML+=`
-            <tr>
-            <td>${mensajeError}</td>
-            </tr>`;
-        }
+    
     }
-};
+}
 
 
 function getEmpleados(empleados){
@@ -76,27 +67,33 @@ function getEmpleados(empleados){
         var empleadosJson = JSON.parse(xhr.responseText);
         for(var i =0;i<empleadosJson.length;i++){
            empleados[i] = empleadosJson[i];
+           
         }
      }
      }
      xhr.send(null);
-};
-
-
+}
 
 (function listarEmpleados(){
-    for(var i=0;i<empleados.length;i++){
-        registro.innerHTML+=
-        `<tr>
-        <td>${empleados[i]}</td>
-        <td>${empleados[i]}</td>
-        <td>${empleados[i]}</td>
-        <td>${empleados[i]}</td>
-        <td>${empleados[i]}</td>
-        </tr>`;
-    }
-
-})();
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET","empleados.json", true);
+    xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4  && this.status == 200) {
+        var empleadosJson = JSON.parse(xhr.responseText);
+        for(var i =0;i<empleadosJson.length;i++){
+            registro.innerHTML+=`
+            <tr>
+            <td>${empleadosJson[i].Nombre}</td>
+            <td>${empleadosJson[i].Apellido}</td>
+            <td>${empleadosJson[i].Puesto}</td>
+            <td>${empleadosJson[i].Sueldo}</td>
+            <td>${empleadosJson[i].Skills}</td>`;
+           
+        }
+     }
+     }
+     xhr.send(null);
+    })()
 
 
 
