@@ -4,21 +4,42 @@ var busqueda = document.querySelector('.itemToSearch');
 var registro = document.querySelector('#record');
 var empleados = new Array();
 getEmpleados(empleados);
+listarEmpleados(empleados);
 
 buttonBusqueda .addEventListener('click', buscarElemento);
+busqueda.addEventListener('keyup',buscarElemento);
+
 
 function resetInput(input){
-    input.value = null;
+    input.innerHTML = '';
+}
+
+function validarEspacioEnBlanco(){
+    if(busqueda.value == ''){
+        return true;
+    }
+    return false;
+
+}
+function existenciaRegistro(){
+    if(registro.innerHTML == ''){
+        return true;
+
+    } 
+    return false; 
+
 }
 
 function buscarElemento(){
-    registro.innerHTML = null;
-    const valorABuscar = busqueda.value.toLowerCase();
-    resetInput(busqueda);
-    for(let i=0; i<empleados.length;i++){
-        console.log("1");
+    resetInput(registro);
+    if(validarEspacioEnBlanco()){
+        busqueda.placeholder = "Debe ingresar nombre";
+    }else{
+        const valorABuscar = busqueda.value.toLowerCase();
+        for(let i=0; i<empleados.length;i++){
         var nombre = empleados[i].Nombre.toLowerCase();
-        if((nombre.indexOf(valorABuscar))!=-1){
+        if(nombre.indexOf(valorABuscar)!=-1){
+            
             registro.innerHTML+=
             `<tr>
             <td>${empleados[i].Nombre}</td>
@@ -26,20 +47,21 @@ function buscarElemento(){
             <td>${empleados[i].Puesto}</td>
             <td>${empleados[i].Sueldo}</td>
             <td>${empleados[i].Skills}</td>
-    
-        </tr>`;
+            </tr>`;
+        }}
+
+        if(existenciaRegistro()){
+            mensajeError="No hay registro";
+            registro.innerHTML+=`
+            <tr>
+            <td>${mensajeError}</td>
+            </tr>`;
         }
 
-    }
+       
 
-    if(registro==''){
-        registro.innerHTML+=`
-        <ul>
-            <li>${"no se encontro"}</li>
-        </ul>
-        `
     }
-}
+};
 
 function getEmpleados(empleados){
     var xhr = new XMLHttpRequest();
@@ -51,14 +73,23 @@ function getEmpleados(empleados){
            empleados[i] = empleadosJson[i];
         }
      }
-     };
+     }
      xhr.send(null);
+};
 
+function listarEmpleados(empleados){
+        for(var i = 0;i<empleados.length;i++){
+            registro.innerHTML+=
+            `<tr>
+            <td>${empleados[i].Nombre}</td>
+            <td>${empleados[i].Apellido}</td>
+            <td>${empleados[i].Puesto}</td>
+            <td>${empleados[i].Sueldo}</td>
+            <td>${empleados[i].Skills}</td>
+            </tr>`;
+        }
 
-
-    
-}
-
+};
 
 
 
