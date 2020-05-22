@@ -80,6 +80,7 @@ function getEmpleados(empleados){
 }
 
 function listarEmpleados(){
+    resetInput(registro);
     var xhr = new XMLHttpRequest();
     xhr.open("GET","empleados.json", true);
     xhr.onreadystatechange = function() {
