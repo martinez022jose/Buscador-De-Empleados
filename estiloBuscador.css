@@ -49,14 +49,14 @@ section .boxSearch .search input{
     text-align: center;
 }
 
-section .boxSearch .search button{
+section .boxSearch .search #buttonSearch{
     width: 150px;
     height: 40px;
-    background:white;
-    color:black;
-    border-radius: 15px;
+    background: #ededed;
+    color: black;
+    border-radius: 10px;
     font-size: 20px;
-    border: 1px solid #333;
+    border: 1px solid #ededed;
 }
 
 
@@ -64,6 +64,15 @@ section .boxSearch .search button:hover{
     background: #ededed;
     color: black;
   
+}
+
+section .boxSearch .search #buttonUpdate{
+    background: none;
+    width: 150px;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    border: 1px solid black;
 }
 section .recordList{
     width: 70%;

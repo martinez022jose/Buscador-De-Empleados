@@ -1,6 +1,7 @@
 
 //Variables
 var buttonBusqueda = document.querySelector('#buttonSearch');
+var buttonUpdate = document.querySelector('#buttonUpdate');
 var busqueda = document.querySelector('.itemToSearch');
 var registro = document.querySelector('#record');
 var empleados = new Array();
@@ -9,6 +10,7 @@ getEmpleados(empleados);
 //Eventos
 buttonBusqueda .addEventListener('click', buscarElemento);
 busqueda.addEventListener('keyup',buscarElemento);
+buttonUpdate.addEventListener('click',listarEmpleados);
 
 //Funciones
 function resetInput(input){
@@ -74,7 +76,7 @@ function getEmpleados(empleados){
      xhr.send(null);
 }
 
-(function listarEmpleados(){
+function listarEmpleados(){
     var xhr = new XMLHttpRequest();
     xhr.open("GET","empleados.json", true);
     xhr.onreadystatechange = function() {
@@ -93,7 +95,9 @@ function getEmpleados(empleados){
      }
      }
      xhr.send(null);
-    })()
+}
+
+listarEmpleados();
 
 
 
