@@ -45,7 +45,9 @@ function realizarBusqueda(valorABuscar){
             <td>${empleados[i].Sueldo}</td>
             <td>${empleados[i].Skills}</td>
             </tr>`;
+
         }}
+    
 
 }
 
@@ -58,6 +60,7 @@ function buscarElemento(){
         realizarBusqueda(valorABuscar);
     
     }
+   
 }
 
 
@@ -90,6 +93,7 @@ function listarEmpleados(){
             <td>${empleadosJson[i].Puesto}</td>
             <td>${empleadosJson[i].Sueldo}</td>
             <td>${empleadosJson[i].Skills}</td>`;
+            resetBuscador(busqueda);
            
         }
      }
@@ -98,6 +102,11 @@ function listarEmpleados(){
 }
 
 listarEmpleados();
+
+function resetBuscador(buscador){
+    buscador.value = null;
+
+}
 
 
 

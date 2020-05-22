@@ -52,15 +52,15 @@ section .boxSearch .search input{
 section .boxSearch .search #buttonSearch{
     width: 150px;
     height: 40px;
-    background: #ededed;
-    color: black;
+    background:#333;
+    color: white;
     border-radius: 10px;
     font-size: 20px;
     border: 1px solid #ededed;
 }
 
 
-section .boxSearch .search button:hover{
+section .boxSearch .search #buttonSearch:hover{
     background: #ededed;
     color: black;
   
